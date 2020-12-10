@@ -22,3 +22,8 @@ createElement(
   createElement('p',null,'world')
 )
 ```
+
+#### 바벨(Babel)
+바벨(Babel)은 자바스크립트 코드를 변환해 주는 컴파일러
+- 리액트에서는 JSX 문법을 사용하기 위해 바벨을 사용
+- 바벨이 jSX문법으로 작성된 코드를 createElement 함수를 호출하는 코드로 변환
