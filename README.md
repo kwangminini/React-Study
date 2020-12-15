@@ -62,5 +62,6 @@ createElement(
   - CSS 빌드 시 같은 이름으로 정의된 CSS가 덮어씌워질 수 있다 (충돌 발생)
 - css-module로 작성하기 (CSS 파일명 ex) Box.module.css)
   - 각 CSS의 속성 값에 해시 값이 부여되어서 각 클래스명은 고유한 이름을 갖게 되어 충돌X
-- Sass로 작성하기
+- Sass로 작성하기 (CSS 파일명 ex) Box.module.scss)
+  - import를 통해 CSS에서 변수를 다룰 수 있어 공통 CSS를 잡기 편함
 - css in js로 작성하기
