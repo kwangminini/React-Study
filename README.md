@@ -64,4 +64,7 @@ createElement(
   - 각 CSS의 속성 값에 해시 값이 부여되어서 각 클래스명은 고유한 이름을 갖게 되어 충돌X
 - Sass로 작성하기 (CSS 파일명 ex) Box.module.scss)
   - import를 통해 CSS에서 변수를 다룰 수 있어 공통 CSS를 잡기 편함
-- css in js로 작성하기
+- css in js로 작성하기 (styled-components)
+  - CSS코드를 Javascript 코드에 넣어 재사용 가능한 구조로 작성 (Javascript 파일로 관리)
+  - CSS를 잘 아는 JS개발자가 있다면 이 방법 추천
+  - CSS를 담당하는 Mark Up개발자가 있다면 이방법 비추천
