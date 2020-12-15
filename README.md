@@ -58,8 +58,9 @@ createElement(
 ```
 
 #### CSS 작성 방법
-- 일반적인 CSS 파일로 작성하기
+- 일반적인 CSS 파일로 작성하기 (CSS 파일명 ex) Box.css)
   - CSS 빌드 시 같은 이름으로 정의된 CSS가 덮어씌워질 수 있다 (충돌 발생)
-- css-module로 작성하기
+- css-module로 작성하기 (CSS 파일명 ex) Box.module.css)
+  - 각 CSS의 속성 값에 해시 값이 부여되어서 각 클래스명은 고유한 이름을 갖게 되어 충돌X
 - Sass로 작성하기
 - css in js로 작성하기
