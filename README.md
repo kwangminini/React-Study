@@ -56,3 +56,10 @@ createElement(
   </head>
 </html>
 ```
+
+#### CSS 작성 방법
+- 일반적인 CSS 파일로 작성하기
+  - CSS 빌드 시 같은 이름으로 정의된 CSS가 덮어씌워질 수 있다 (충돌 발생)
+- css-module로 작성하기
+- Sass로 작성하기
+- css in js로 작성하기
