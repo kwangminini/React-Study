@@ -90,5 +90,13 @@ createElement(
  - useState는 배열을 반환 (배열의 첫번째 아이템 => 상태값, 두번째 아이템 => 상태값 변경 함수)
  
  
- 
-
+ #### state && props
+ - state : 불변성 X, 하지만 불변으로 관리하는게 좋음 
+   - 객체를 불변변수로 관리 : 전개 연산자(...) 사용
+ - props : 불변성 O
+ - 부모 컴포넌트 렌더링하면 자식 컴포넌트도 따라서 렌더링
+   - 속성값이 변경될 때만 렌더링 -> React.memo
+   ```
+   function Title({title}){}
+   export default React.memo(Title); //속성값 title이 변경될 때만 이 컴포넌트가 렌더링
+   ```
