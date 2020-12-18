@@ -100,3 +100,13 @@ createElement(
    function Title({title}){}
    export default React.memo(Title); //속성값 title이 변경될 때만 이 컴포넌트가 렌더링
    ```
+
+#### 컴포넌트에서 반환할 수 있는 값
+- React 요소 ( div, p, h1 등)
+- 문자열, 숫자, 배열(key값 필요)
+- Fragment(요소의 순서가 key역할을 해서 key값 필요 x)
+  - 원하지 않는 div 대신 fragment 사용 (<React.Fragment> or <>)
+  - {null}, {false}, {true} -> 조건부 렌더링할 때 유용
+- 리액트 Portal 
+  - public > index.html에 <div id='root'></div> 말고 다른 div 만들어서 렌더링 가능
+  - ReactDOM.createPortal() : 보통 Modal을 위해 사용
