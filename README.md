@@ -110,3 +110,13 @@ createElement(
 - 리액트 Portal 
   - public > index.html에 <div id='root'></div> 말고 다른 div 만들어서 렌더링 가능
   - ReactDOM.createPortal() : 보통 Modal을 위해 사용
+
+#### 리액트 훅(Hook)
+- 컴포넌트에 기능을 추가할 때 사용하는 함수
+  - ex) 컴포넌트에 상태값 추가, 자식 요소에 접근
+- 리액트 16.8에 추가
+  - 이전에는 클래스형 컴포넌트 사용
+  - 클래스형 컴포넌트보다 장점이 많으며 리액트팀에서도 훅(Hook)에 집중
+- useState : 상태값 추가
+- useEffect : 부수효과(외부의 상태를 변경하는 것) 처리
+  - 서버 API호출, 이벤트 핸들러 등록 등 
