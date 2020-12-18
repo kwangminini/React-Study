@@ -125,3 +125,4 @@ createElement(
 - 리액트에서 관리하지 않는 외부에서 호출하는 경우에는 배치(batch)로 처리 안됨
   - 상태값 변경 함수 호출할 때 마다 렌더링 
   - 외부에서 호출할 때도 배치로 처리되길 원한다면 batchedUpdate 함수 호출
+  - *concurrent Mode *
