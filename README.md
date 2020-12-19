@@ -145,3 +145,4 @@ createElement(
 - Provider value값이 변하면 Consumer는 렌더링 된다.
   - 이 때, 중간층 컴포넌트는 렌더링 되지 않는다.
 - Consumer 대신에 Hook을 이용해서 useContext()로 대체 가능
+  - 따라서 Consumer 컴포넌트를 사용하는 일은 거의 없다. useContext이용
