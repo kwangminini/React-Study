@@ -144,3 +144,4 @@ createElement(
   - root까지 Provider를 찾지 못한 경우 createContext('초기값')으로 설정된 초기값을 참조한다.
 - Provider value값이 변하면 Consumer는 렌더링 된다.
   - 이 때, 중간층 컴포넌트는 렌더링 되지 않는다.
+- Consumer 대신에 Hook을 이용해서 useContext()로 대체 가능
