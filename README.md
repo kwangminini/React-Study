@@ -135,3 +135,12 @@ createElement(
 - 하나의 컴포넌트에서 훅을 호출하는 순서는 항상 같아야 함
   - if문/for문/함수 안에서 훅을 사용하면 안됨
 - 훅은 함수형 컴포넌트 혹은 커스텀 훅 안에서만 호출되어야 함
+
+#### Context
+- props를 부모 컴포넌트에서 자식 컴포넌트로 전달해 줄 때 자식 컴포넌트와 부모 컴포넌트가 멀리 떨어져 있을 경우 중간에 계속 props를 전달해야 하는 불편함을 제거하기 위한 함수
+- 초기에 createContext('초기값')을 통해 객체를 반환
+- 부모 : Provider / 자식 : Consumer로 구분
+  - Consumer입장에서는 가장 가까운 Provider의 value값을 참조한다.
+  - root까지 Provider를 찾지 못한 경우 createContext('초기값')으로 설정된 초기값을 참조한다.
+- Provider value값이 변하면 Consumer는 렌더링 된다.
+  - 이 때, 중간층 컴포넌트는 렌더링 되지 않는다.
