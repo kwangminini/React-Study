@@ -1,19 +1,19 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-export default function App2(){
+export default function App2() {
   const [age, setAge] = useState(20);
   const prevAgeRef = useRef(20);
-  useEffect(()=>{
+  useEffect(() => {
     prevAgeRef.current = age;
-  },[age]);
+  }, [age]);
   const prevAge = prevAgeRef.current;
   const text = age === prevAge ? 'same' : age > prevAge ? 'older' : 'yonger';
-  return(
+  return (
     <div>
       <p>{`age ${age} is ${text} than age ${prevAge}`}</p>
-      <button onClick={()=>{
+      <button onClick={() => {
         const age = Math.floor(Math.random() * 50 + 1);
-        setAge(age);        
+        setAge(age);
       }}>나이 변경</button>
     </div>
   )
