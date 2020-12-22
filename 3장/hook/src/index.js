@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App3 from './App3';
+import UseReducer from './useReducer';
+import UseImperativeHandle from './UseImperativeHandle';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App3 />
+    <UseImperativeHandle />
   </React.StrictMode>,
   document.getElementById('root')
 );
