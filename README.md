@@ -150,7 +150,7 @@ createElement(
 ----
 ### 6. 리덕스로 상태 관리하기
 
-#### 리덕스
+#### 리덕스 (redux)
 - 컴포넌트 코드로부터 상태 관리 코드를 분리할 수 있음
 - 미들웨어를 활용한 다양한 기능 추가
   - 강력한 미들웨어 라이브러리 (redux-saga)
@@ -158,7 +158,7 @@ createElement(
 - SSR 시 데이터 전달이 간편
 - react context보다 효율적인 렌더링 가능
 
-#### 액션
+#### 액션 (action)
 ```
 store.dispatch({type: 'todo/ADD', title: '영화 보기', priority: 'high'});
 ```
@@ -182,8 +182,31 @@ store.dispatch(addTodo({title:'영화 보기', priority: 'high'}));
 ```
 - 위의 예제와 같이 type 속성은 action creator에서 사용하기도 하지만 리듀서에서도 사용하기 때문에 상수 변수로 만드는 것이 좋음
 
-#### 미들웨어
+#### 미들웨어 (middleware)
 ```
 const myMiddelware = store => next => action => next(action);
 ```
-
+- 위의 예제와 같이 여러 함수가 엉켜있는 이유 : 결론적인 함수 next(action)에서 store 와 next를 사용하기 위해서
+- 미들웨어를 작성할 때 스토어가 필요한 경우가 많음
+```
+const reportCrash = store => next => action =>{
+  try{
+    return next(action)
+  } catch(err){
+    //서버로 예외 정보 전송
+  }
+}
+```
+- 위의 예제와 같이 예외처리를 할 수 있음
+```
+const delayAction = store => next => action =>{
+  const delay = action.meta?.delay;
+  if (!delay){
+    return next(action);
+  }
+  const timeoutId = setTimeout(() => next(action), delay);
+  return function cancel(){
+    clearTimeout(timeoutId);
+  }
+}
+```
