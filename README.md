@@ -157,3 +157,33 @@ createElement(
   - 로컬 스토리지에 데이터 저장하기 및 불러오기
 - SSR 시 데이터 전달이 간편
 - react context보다 효율적인 렌더링 가능
+
+#### 액션
+```
+store.dispatch({type: 'todo/ADD', title: '영화 보기', priority: 'high'});
+```
+- dispatch 함수는 액션이 발생했다는 것을 리덕스에게 알려주는 함수 (매개변수 = 액션 객체)
+- 액션 객체에 type 속성값 말고 원하는 대로 속성을 정의해서 전달할 수 있음 (데이터를 리듀서에서 받아서 처리)
+- 액션을 구분하기 위해서 type 속성값을 사용하므로 type 속성값은 유니크 해야함 (위의 예제 처럼 주로 prefix를 붙여서 많이 사용)
+```
+function addTodo({title, priority}){
+  return {type: 'todo/ADD', title, priority};
+}
+store.dispatch(addTodo({title:'영화 보기', priority: 'high'}));
+```
+- 위의 예제와 같이 action creator를 만들어서 사용하는 이유 : 각 액션 객체의 구조를 일관성 있게 만들기 위해서
+
+```
+const ADD = 'todo/ADD'
+function addTodo({title, priority}){
+  return {type: ADD, title, priority};
+}
+store.dispatch(addTodo({title:'영화 보기', priority: 'high'}));
+```
+- 위의 예제와 같이 type 속성은 action creator에서 사용하기도 하지만 리듀서에서도 사용하기 때문에 상수 변수로 만드는 것이 좋음
+
+#### 미들웨어
+```
+const myMiddelware = store => next => action => next(action);
+```
+
