@@ -247,4 +247,16 @@ const saveToLocalStorage = store => next => action => {
 - 리듀서는 순수 함수로 작성해야 함 (부수효과(외부 상태 변경) 없어야함)
   - 즉, 서버 API를 리듀서에서 호출하면 안됨 
   - 입력이 같을 때 같은 결과를 출력해야함 (random 함수 사용하면 안됨)
-
+- createReducer
+  ```
+  function createReducer(initialState, handlerMap){
+    return function (state = initialState, action){
+      return produce(state, draft => {
+        const handler = handlerMap[action.type];
+        if (handler){
+          handler(draft, action);
+        }
+      });
+    };
+  }
+  ```
