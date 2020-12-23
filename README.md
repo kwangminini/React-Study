@@ -260,3 +260,7 @@ const saveToLocalStorage = store => next => action => {
     };
   }
   ```
+- createStore
+  - 리덕스에서 store를 만들 때 사용되는 함수 : createStore(reducer)
+  - store는 상태값을 저장하는 역할도 있고 액션 처리가 끝났다는 것을 외부에 알려주는 역할도 함 - store.subscribe() 
+   
