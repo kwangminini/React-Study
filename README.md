@@ -210,3 +210,15 @@ const delayAction = store => next => action =>{
   }
 }
 ```
+- 위의 예제와 같이 delayAction을 만들 수 있음 (action.meta에 delay라는 값이 있을 때 딜레이를 해줘서 리듀서를 늦게 실행 시킴)
+```
+const saveToLocalStorage = store => next => action => {
+  if (action.meta?.localStorageKey){
+    localStorage.setItem(action.meta?.localStorageKey, JSON.stringify(action));
+  }
+  return next(action);
+}
+```
+- 위의 예제와 같이 localStorage에 저장해주는 미들웨어도 가능함
+
+
