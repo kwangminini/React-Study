@@ -241,3 +241,5 @@ const saveToLocalStorage = store => next => action => {
     });
   }
   ```
+  - 위의 예제에서 EDIT_PEOPLE_NAME에서 people객체가 만들어지고 people의 name을 변경해도
+    SET_SELECTED_PEOPLE에서는 
