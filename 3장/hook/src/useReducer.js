@@ -3,7 +3,7 @@ import React, {useReducer} from 'react';
 export default function UseReducer(){
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
     return(
-        <div>
+        <div> 
             <p>{`name is ${state.name}`}</p>
             <p>{`age is ${state.age}`}</p>
             <input type="text"
