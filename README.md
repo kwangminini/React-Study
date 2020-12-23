@@ -242,4 +242,9 @@ const saveToLocalStorage = store => next => action => {
   }
   ```
   - 위의 예제에서 EDIT_PEOPLE_NAME에서 people객체가 만들어지고 people의 name을 변경해도
-    SET_SELECTED_PEOPLE에서는 
+    SET_SELECTED_PEOPLE에서는 예전의 객체 레퍼런스를 들고 있기 때문에 name은 변경되지 않은채로 예전값을 참조
+  - 따라서, 객체의 레퍼런스가 아니라 객체의 고유한 id값을 참조해서 이 값을 활용하는게 좋다.
+- 리듀서는 순수 함수로 작성해야 함 (부수효과(외부 상태 변경) 없어야함)
+  - 즉, 서버 API를 리듀서에서 호출하면 안됨 
+  - 입력이 같을 때 같은 결과를 출력해야함 (random 함수 사용하면 안됨)
+
