@@ -221,4 +221,23 @@ const saveToLocalStorage = store => next => action => {
 ```
 - 위의 예제와 같이 localStorage에 저장해주는 미들웨어도 가능함
 
-
+#### 리듀서 (reducer)
+- 리듀서는 액션이 발생했을 때 새로운 상태값을 만드는 함수
+- 리듀서 작성 중 주의해야할 점 
+  ```
+  function reducer(state = INITIAL_STATE, action) {
+    return produce(state, draft => {
+      switch(action.type){
+        case SET_SELECTED_PEOPLE:
+          draft.selectedPeople = draft.peopleList.find(
+            item => item.id === action.id  
+          );
+          break;
+        case EDIT_PEOPLE_NAME:
+          const people = draft.peopleList.find(item => item.id === action.id);
+          people.name = action.name;
+          break;
+      }
+    });
+  }
+  ```
