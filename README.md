@@ -263,4 +263,9 @@ const saveToLocalStorage = store => next => action => {
 - createStore
   - 리덕스에서 store를 만들 때 사용되는 함수 : createStore(reducer)
   - store는 상태값을 저장하는 역할도 있고 액션 처리가 끝났다는 것을 외부에 알려주는 역할도 함 - store.subscribe() 
+  
+### react-redux
+- Provider 컴포넌트에서는 리액트에서 액션이 처리됐을 떄 이벤트를 받아서 하위에 있는 다른 컴포넌트가 다시 렌더링 될 수 있도록 도와줌
+- 리덕스에서 데이터를 가져올 때는 useSelector Hook을 사용
+  - useSelect(state => state.friend.friends) : 리덕스의 상태값이 매개변수로 넘어오고 사용하려는 데이터를 가져오면 됨 -> 안의 함수의 반환 값이 Hook의 반환값이 됨
    
