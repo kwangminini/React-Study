@@ -1,18 +1,20 @@
-import createReducer from "../../common/createReducer";
+import createReducer, { createSetValueAction, setValueReducer } from "../../common/createReducer";
 import {MAX_AGE_LIMIT, MAX_SHOW_LIMIT} from '../common';
 //action
 const ADD = 'friend/ADD';
 const REMOVE = 'friend/REMOVE';
 const EDIT = 'friend/EDIT';
-const SET_AGE_LIMIT = 'friend/SET_AGE_LIMIT';
-const SET_SHOW_LIMIT = 'friend/SET_SHOW_LIMIT';
+// const SET_AGE_LIMIT = 'friend/SET_AGE_LIMIT';
+// const SET_SHOW_LIMIT = 'friend/SET_SHOW_LIMIT';
+const SET_VALUE = 'friend/SET_VALUE';
 
 //action create 함수
 export const addFriend = friend => ({type: ADD, friend});
 export const removeFriend = friend => ({type: REMOVE, friend});
 export const editFriend = friend => ({type: EDIT, friend});
-export const setAgeLimit = ageLimit => ({type: SET_AGE_LIMIT, ageLimit});
-export const setShowLimit = showLimit => ({type: SET_SHOW_LIMIT, showLimit});
+// export const setAgeLimit = ageLimit => ({type: SET_AGE_LIMIT, ageLimit});
+// export const setShowLimit = showLimit => ({type: SET_SHOW_LIMIT, showLimit});
+export const setValue = createSetValueAction(SET_VALUE);
 
 const INITIAL_STATE = {friends: [], ageLimit: MAX_AGE_LIMIT, showLimit: MAX_SHOW_LIMIT};
 const reducer = createReducer(INITIAL_STATE,{
@@ -28,8 +30,9 @@ const reducer = createReducer(INITIAL_STATE,{
             state.friends[index] = action.friend;
         }
     },
-    [SET_AGE_LIMIT]: (state, action) => (state.ageLimit = action.ageLimit),
-    [SET_SHOW_LIMIT]: (state, action) => (state.showLimit = action.showLimit)
+    // [SET_AGE_LIMIT]: (state, action) => (state.ageLimit = action.ageLimit),
+    // [SET_SHOW_LIMIT]: (state, action) => (state.showLimit = action.showLimit),
+    [SET_VALUE]: setValueReducer
 });
 
 export default reducer;
